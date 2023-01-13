@@ -69,8 +69,6 @@ list_regex_default = [('Artikel regel 1' , r"(Artikel=[a-z0-9\.]{1,7})(.{1,})cit
                ]
 
 def on_press_download_button():
-    global clean_files
-    global clean_filenames
     output = io.BytesIO()
     zf = zipfile.ZipFile(output, mode='w')
     for filename, filecontent in zip(clean_filenames, clean_files):
@@ -80,7 +78,6 @@ def on_press_download_button():
     return output
 
 def on_add_regex_button(event):
-    global list_regex_default
     # Add string to search_selector
     list_regex_default.append((textbox_regex_name.value, 
 textbox_regex_from.value, textbox_regex_to.value))

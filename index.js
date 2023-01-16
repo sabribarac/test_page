@@ -72,12 +72,12 @@ list_regex_default = [('Artikel regel 1' , r"(Artikel=[a-z0-9\.]{1,7})(.{1,})cit
                ]
 
 def on_press_download_button():
-    
-    with zipfile.ZipFile('file.zip', 'w') as myzip:
-        for filename, filecontent in zip(clean_filenames, clean_files):
-            myzip.writestr(filename, filecontent)
-    myzip.close()
-    download_button.save('file.zip')
+    print('test')
+    # with zipfile.ZipFile('file.zip', 'w') as myzip:
+    #     for filename, filecontent in zip(clean_filenames, clean_files):
+    #         myzip.writestr(filename, filecontent)
+    # myzip.close()
+    # download_button.save('file.zip')
 
 
 def on_add_regex_button():

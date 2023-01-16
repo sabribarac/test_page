@@ -75,7 +75,12 @@ def on_press_download_button():
 def on_add_regex_button(event):
     global list_regex_default
     # Add string to search_selector
-    list_regex_default.append((textbox_regex_name.value, textbox_regex_from.value, textbox_regex_to.value))
+    list_regex_default.append(str(textbox_regex_name.value)+"<OOV>"+str(textbox_regex_from.value)+"<OOV>"+textbox_regex_to.value)
+    print(list_regex_default)
+    print('-----')
+    search_selector.options = list_regex_default
+    search_selector.param.trigger('value')
+    #search_selector.force_new_dynamic_value()
     # print(list_regex_default)
 
     
@@ -149,6 +154,9 @@ def on_button_press(event):
                     # Do some processing here
                     #print('Replace %s with %s' %(reg[1], reg[2]))
                     string =  file_input.value[i].decode('utf-8')
+                    reg = reg.split('<OOV>')
+                    
+                    print(reg)
                     string = re.sub(reg[1], reg[2], string)
                     #print(string[0:10])
 
@@ -232,7 +240,7 @@ pn.extension()
 #pn.extension(sizing_mode="stretch_width", template="fast")
 # panel serve hvplot_interactive.ipynb
 #panel serve --show --autoreload
-#dashboard.show()
+
 
 await write_doc()
   `

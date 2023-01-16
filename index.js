@@ -115,13 +115,13 @@ progress_gauge = Gauge(name='Progress', value=0, width=300, title_size=10, color
 
 # Create a crossSelector to search the input in each of the files
 #search_selector = CrossSelector(name='Regular Expression', options=list_regex_default, value=list_regex_default, width=1000, definition_order=False)
-search_selector = cross_selector = pn.widgets.CrossSelector(name='Fruits', value=[{'name': 'Various 3', 'from': "~", 'to':""}, 'Pear'], 
-    options=[{'name': 'Various 3', 'from': "~", 'to':""}, 'Banana', 'Pear', 'Strawberry'])
+search_selector = cross_selector = pn.widgets.CrossSelector(name='Regular Expression', value=["Artikel rege2<oov>: Artikel=<oov>: artikel"], 
+    options=["Artikel rege2<oov>: Artikel=<oov>: artikel", 'Banana', 'Pear', 'Strawberry'])
 
 # def search_selector_change(event):
 #     print(event.new)
 
-# search_selector.on_change("value", search_selector_change)
+# search_selector.on_change("value", search_selector_change) 'Artikel regel 2', ": Artikel=", ": artikel "
 
 # Create textbox to add new regular expressions
 textbox_regex_name = pn.widgets.TextInput(placeholder='Name')

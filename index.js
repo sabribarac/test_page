@@ -232,7 +232,7 @@ pn.extension()
 #pn.extension(sizing_mode="stretch_width", template="fast")
 # panel serve hvplot_interactive.ipynb
 #panel serve --show --autoreload
-dashboard.show()
+#dashboard.show()
 
 await write_doc()
   `

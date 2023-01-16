@@ -97,7 +97,7 @@ def process_files():
                 content = re.sub(regex[1], regex[2], content)
             clean_filenames.append(file.name)
             clean_files.append(content)
-    download_button.disabled = False
+    #download_button.disabled = False
     progress_gauge.value = 1
 
 # Create a file input component
@@ -108,7 +108,7 @@ process_button = Button(name='Process files', button_type="primary", width=200)
 process_button.on_click(process_files)
 
 # Create download button
-download_button = pn.widgets.FileDownload(filename="data.zip", callback=on_press_download_button, button_type="primary", disabled=True)
+#download_button = pn.widgets.FileDownload(filename="data.zip", callback=on_press_download_button, button_type="primary", disabled=True)
 
 # Create a gauge bar to show the progress
 progress_gauge = Gauge(name='Progress', value=0, width=300, title_size=10, colors=[(0.2, 'red'), (0.8, 'gold'), (1, 'green')])
@@ -127,7 +127,7 @@ add_regex_button.on_click(on_add_regex_button)
 textbox = pn.widgets.TextAreaInput(placeholder='Processed files are shown here..', width=1000, height=225)
 
 # Create the layout
-layout = pn.Column(file_input, process_button, search_selector, textbox_regex_name, textbox_regex_from, textbox_regex_to, add_regex_button, progress_gauge, textbox, download_button)
+layout = pn.Column(file_input, process_button, search_selector, textbox_regex_name, textbox_regex_from, textbox_regex_to, add_regex_button, progress_gauge, textbox)#, download_button)
 
 # Show the UI
 #layout.show()

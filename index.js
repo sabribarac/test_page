@@ -76,7 +76,7 @@ def on_add_regex_button(event):
     global list_regex_default
     # Add string to search_selector
     list_regex_default.append(str(textbox_regex_name.value)+"<OOV>"+str(textbox_regex_from.value)+"<OOV>"+textbox_regex_to.value)
-    print(list_regex_default)
+    #print(list_regex_default)
     print('-----')
     search_selector.options = list_regex_default
     search_selector.param.trigger('value')
@@ -155,9 +155,13 @@ def on_button_press(event):
                     #print('Replace %s with %s' %(reg[1], reg[2]))
                     string =  file_input.value[i].decode('utf-8')
                     reg = reg.split('<OOV>')
-                    
-                    print(reg)
+                    print('----')
+                    print(reg[1])
+                    print(reg[2])
+                    print('----')
                     string = re.sub(reg[1], reg[2], string)
+                    print('afterwards')
+                    print(string)
                     #print(string[0:10])
 
                 # Store clean filename
@@ -232,6 +236,7 @@ dashboard = pn.Row(
     main_panel,
     pn.Spacer(width=10),  # Set the top panel width to 30%
 )
+
 
 
 # Serve the dashboard

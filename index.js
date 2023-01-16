@@ -115,8 +115,8 @@ progress_gauge = Gauge(name='Progress', value=0, width=300, title_size=10, color
 
 # Create a crossSelector to search the input in each of the files
 #search_selector = CrossSelector(name='Regular Expression', options=list_regex_default, value=list_regex_default, width=1000, definition_order=False)
-search_selector = cross_selector = pn.widgets.CrossSelector(name='Fruits', value=['Apple', 'Pear'], 
-    options=['Apple', 'Banana', 'Pear', 'Strawberry'])
+search_selector = cross_selector = pn.widgets.CrossSelector(name='Fruits', value=[('Various 3', "~", ""), 'Pear'], 
+    options=[('Various 3', "~", ""), 'Banana', 'Pear', 'Strawberry'])
 
 # def search_selector_change(event):
 #     print(event.new)

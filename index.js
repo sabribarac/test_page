@@ -67,7 +67,8 @@ app = pn.Column(
     height=600,
 )
 
-app.servable()       
+app.servable()
+pn.extension('beautifulsoup4')
 
 
 

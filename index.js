@@ -68,7 +68,7 @@ app = pn.Column(
 )
 
 app.servable()
-
+pn.extension()
 
 
 await write_doc()
